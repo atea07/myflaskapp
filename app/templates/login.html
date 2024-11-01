@@ -1,0 +1,25 @@
+{% extends "basic.html" %}
+
+{% block body %}
+<form action="" method="POST">
+   {{form.hidden_tag() }}
+   <!-- {{ form.errors }} -->
+    <div class="mb-3">
+      {{form.email.label(class="form-label")}}
+      {% if form.email.errors %}
+        {% for error in form.email.errors %}
+        <span>{{error}}</span>
+        {% endfor %}
+      {% else %}
+      {{form.email()}}
+      {% endif %}
+    </div>
+    <div class="mb-3">
+      {{form.password.label(class="form-label")}}
+      {{form.password()}}
+    </div>
+    <div class="mb-3">
+      {{form.submit()}}
+    </div>         
+</form>
+{% endblock%}

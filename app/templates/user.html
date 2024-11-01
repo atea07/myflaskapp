@@ -1,0 +1,11 @@
+{% extends "basic.html" %}
+{% block body %}
+<p>
+    <img src="{{user.pic_file}}">
+    <a href="{{url_for('update_account')}}">Change profile?</a>
+</p>
+<p>Email: {{user.email }}</p>
+<div class="mb-lg-0">
+    Last login: {{(user.last_login).strftime("%Y-%m-%d %H:%M")}}
+</div>
+{% endblock%}

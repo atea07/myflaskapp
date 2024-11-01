@@ -1,0 +1,14 @@
+{% extends "basic.html" %}
+{% block body %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+  {{form.hidden_tag() }}
+   <div class="mb-3">
+     {{form.pic.label(class="form-label")}}<br>
+     {{form.pic(placeholder=current_user.pic_file)}}
+   </div>
+   <p>
+    {{form.submit()}}
+   </p>
+</form>
+{% endblock %}

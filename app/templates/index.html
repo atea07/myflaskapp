@@ -1,0 +1,15 @@
+{% extends "basic.html" %}
+{% block body %}
+<table class="table">
+    <tr>
+        <th scope="col">User</th>   
+        <th scope="col">Email</th>
+        <th scope="col">Hash</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td scope="row"><a href="{{url_for('user', id=user.id)}}">{{user.id}}</a></td><td>{{user.email}}</td><td>{{user.password_hash}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}  

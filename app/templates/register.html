@@ -1,0 +1,24 @@
+{% extends "basic.html" %}
+
+{% block body %}
+<form action="" method="POST">
+    {{form.hidden_tag()}}
+    <!-- {{form.errors}} -->
+     <h1>{{message}}</h1>
+    <p>
+        {{form.email.label(class="form-label")}}
+        {{form.email()}}
+    </p>
+    <p>
+        {{form.password.label(class="form-label")}}
+        {{form.password()}}
+    </p>
+    <p>
+        {{form.confirm_password.label(class="form-label")}}
+        {{form.confirm_password()}}
+    </p>        
+    <p>
+        {{form.submit()}}
+    </p>
+</form>
+{% endblock %}
